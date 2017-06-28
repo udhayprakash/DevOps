@@ -1,17 +1,17 @@
-PowerShell for Begineers
+PowerShell for Beginers
 ===================
 ----------
 `This document is getting updated time-to-time. Become a watcher to get updates.`
 
 PowerShell is a windows command-line shell designed especially for system administrators.  It was built on top of the .NET Framework common language runtime (CLR) and the .NET Framework. So,  it accepts and returns .NET Framework objects.
 	
-PowerShell work in both **INTERACTIVE** mode and **SCRIPT** mode. It possesses **cmdlet** (pronounced "command-let") for doing pre-defined tasks.
+PowerShell works in both **INTERACTIVE** mode and **SCRIPT** mode. It possesses **cmdlet** (pronounced "command-let") for doing pre-defined tasks.
 
 
 ## 1. Why Should  I Learn Another Language?
 
 
-There wont be much gain, without any pain. I would recommend learning powershell because of the **advantages** that it offers. 
+_There wont be much gain, without any pain._ I would recommend learning powershell because of the **advantages** that it offers. 
 > **Advantages:**
 
 > - Ease in accessing file systems
@@ -19,15 +19,13 @@ There wont be much gain, without any pain. I would recommend learning powershell
 > - Open-source and increasing community base
 > - Apart from windows, it is extending support for Linux from next release.
 > - As PowerShell is tightly coupled with .NET framework. So, .NET objects can be used. 
-> - Ease in working with all Microsoft products (Office suite, Client Os, Server Os, IIS, Databases, Visual Studio Suite etc) 
+> - Ease in working with all Microsoft products (Office suite, Client OS, Server OS, IIS, Databases, Visual Studio Suite, etc.) 
 > - Ability to connect to existing windows administrative functionality: 
 >  - WMI
 >  - Microsoft .NET framework
 >  - COM (Component Object Model)
 >  - ADSI (Active Directory Services Interface)
->-  Can be used to automate almost any administrative task
-
-
+>  - Can be used to automate almost any administrative task
 
 ## 2. About PowerShell
 ### 2.1 PowerShell History
@@ -49,7 +47,7 @@ PowerShell script have **.ps1** as the file extension. Here, the '1' in '.ps1' d
 > - Can be installed on Windows 7 and Server 2008 or Higher
 > - PowerShell Remoting is enabled by default on Server 2012
 
-There exists [some differences](https://4sysops.com/wiki/differences-between-powershell-versions/) between these versions, and the  latest version of PowerShell is **5.0**. 
+There exists [some differences](https://4sysops.com/wiki/differences-between-powershell-versions/) between these versions, and the  latest version of PowerShell is **6.0**. 
 The suitable PowerShell version for windows servers is:
 
 |PowerShell Version	| Release Date	| Default Windows Versions	| Available Windows Versions|
@@ -82,7 +80,7 @@ The suitable PowerShell version for windows servers is:
 Go to windows menu, and type `Windows PowerShell` (don't choose `Windows PowerShell ISE`) and open it. 
 
 ### 2.3 PowerShell Environment
-To Get the PowerShell version installed on the machine, type
+To get the PowerShell version installed on the machine, type
 ```bash
 PS C:\> $PSVersionTable
 
@@ -96,9 +94,9 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
-Observe the `PSVersion` which is `5.0` in this case.
+Observe that the `PSVersion` which is `5.0` in this case.
 
-To Get the Host details,
+To get the Host details,
 ```
 PS C:\> Get-Host
 
@@ -123,7 +121,6 @@ PS C:\>
 ```
 The `$env` variable must be accompanied by the other corresponding variable. 
 ```
-PS C:\> 
 PS C:\> $env:COMPUTERNAME
 UDHAYPC
 
@@ -151,7 +148,6 @@ C:
 PS C:\> $env:ProgramFiles
 C:\Program Files
 
-PS C:\> 
 ```
 __NOTE:__ If you dont know all the variables part of it, after `:` type `tab` key to all those variables one-by-one.
 
@@ -176,7 +172,8 @@ Invoke-Expression -Command:$command
 But, let's ignore this until we understood this language syntax and semantics. 
 
 ### 2.5 Command Structure in PowerShell
-PowerShell possesses light-weight commands, called cmdlets, to do some specific tasks.  
+PowerShell possesses light-weight commands, called _cmdlets_, to do some specific tasks.  
+
 They use a consistent verb-noun structure, where the verb represents the action and the noun represents the object to operate on.
 
 PowerShell cmdlets follow consistent naming patterns, ensuring that construction of a command is easy if you know the object that you want to work with.
@@ -193,23 +190,23 @@ To get the list of `approved verbs`,
 ```
 PS C:\> Get-Verb
 
-Verb                                                                        Group                                                                      
-----                                                                        -----                                                                      
-Add                                                                         Common                                                                     
-Clear                                                                       Common                                                                     
-Close                                                                       Common                                                                     
-Copy                                                                        Common                                                                     
-Enter                                                                       Common                                                                     
-Exit                                                                        Common                                                                     
-Find                                                                        Common                                                                     
-Format                                                                      Common                                                                     
-Get                                                                         Common                                                                     
-Hide                                                                        Common                                                                     
-Join                                                                        Common                                                                     
-Lock                                                                        Common                                                                     
-Move                                                                        Common                                                                     
-New                                                                         Common                                                                     
-Open                                                                        Common                                                                     
+Verb          Group                                                                      
+----          -----                                                                      
+Add           Common                                                                     
+Clear         Common                                                                     
+Close         Common                                                                     
+Copy          Common                                                                     
+Enter         Common                                                                     
+Exit          Common                                                                     
+Find          Common                                                                     
+Format        Common                                                                     
+Get           Common                                                                     
+Hide          Common                                                                     
+Join          Common                                                                     
+Lock          Common                                                                     
+Move          Common                                                                     
+New           Common                                                                     
+Open          Common                                                                     
 ....
 [Tailored the list]
 ```
@@ -462,6 +459,7 @@ PS C:\> <#
 PS C:\>
 ```
 Regions are not logical, but representational blocks of code. 
+
 __NOTE:__ Regions have their importance in powershell ISE only. They are used to divide the script into logical code blocks. 
 
 ```
@@ -480,9 +478,9 @@ PS C:\> #endregion The Region Title is Optional
 PS C:\>
 ```
 
-Special Characters in PowerShell
+**Special Characters in PowerShell**
 
-|special Character	| Meaning|
+|Special Character	| Meaning|
 | --- | --- |
 |" | The beginning( or end) of quoted text. Used to represent strings |
 |' | The beginning( or end) of quoted text. Used to represent strings. special characters lose their significance within single quotes|
@@ -496,29 +494,34 @@ Special Characters in PowerShell
 |` |  Escape Character|
 |? |  Alias operator for Where-Object|
 |% |  Alias Operator for for-loop|
+
+All variables start with a $.
 ```
-PS C:\> # All variables start with a $.
 PS C:\> $hi = "Hello World"
-PS C:\>
-PS C:\> # Print the value
+```
+Printing the value in variable
+```
 PS C:\> $hi
 Hello World
-PS C:\>
-PS C:\> # This is a shortcut to Write-Host
+```
+This is a shortcut to Write-Host
+```
 PS C:\> Write-Host $hi
 Hello World
-PS C:\>
-PS C:\> # Variables are objects. Show the type
+```
+Variables are objects, and to get their data type, 
+```
 PS C:\> $hi.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     String                                   System.Object
+```
 
+__GetType()__ is one method, applicable on '$hi' object
 
-PS C:\> # GetType() is one method, applicable on '$hi' object
-PS C:\>
-PS C:\> # Display all the members of this variable (object)
+To display all the members of this variable (object)
+```
 PS C:\> $hi | Get-Member
 
 
@@ -602,9 +605,6 @@ PS C:\> $hi.GetType()
 IsPublic IsSerial Name                                     BaseType                                                         
 -------- -------- ----                                     --------                                                         
 True     True     Int32                                    System.ValueType                                                 
-
-
-
 PS C:\> $hi | Get-Member
 
 
@@ -634,7 +634,7 @@ ToUInt16    Method     uint16 IConvertible.ToUInt16(System.IFormatProvider provi
 ToUInt32    Method     uint32 IConvertible.ToUInt32(System.IFormatProvider provider)                                        
 ToUInt64    Method     uint64 IConvertible.ToUInt64(System.IFormatProvider provider)                                        
 ```
-Variables can ALSO be strongly typed 
+Variables can also be **strongly-typed**. 
 ```
 PS C:\> [System.Int32]$myint = 42  
 
@@ -646,9 +646,6 @@ PS C:\> $myint.GetType()
 IsPublic IsSerial Name                                     BaseType                                                         
 -------- -------- ----                                     --------                                                         
 True     True     Int32                                    System.ValueType                                                 
-
-
-
 PS C:\> $myint = "This won't work"
 Cannot convert value "This won't work" to type "System.Int32". Error: "Input string was not in a correct format."
 At line:1 char:1
@@ -657,7 +654,7 @@ At line:1 char:1
     + CategoryInfo          : MetadataError: (:) [], ArgumentTransformationMetadataException
     + FullyQualifiedErrorId : RuntimeException
 ```
-There are shortcuts for most .net types
+There are shortcuts for most .NET data types.
 ```
 PS C:\> [int] $myotherint = 42
 
@@ -666,9 +663,6 @@ PS C:\> $myotherint.GetType()
 IsPublic IsSerial Name                                     BaseType                                                         
 -------- -------- ----                                     --------                                                         
 True     True     Int32                                    System.ValueType                                                 
-
-
-
 PS C:\> [string] $mystring="PowerShell"
 
 PS C:\> $mystring.GetType()
@@ -705,7 +699,22 @@ IsPublic IsSerial Name                                     BaseType
 True     True     Int32                                    System.ValueType                                                 
 
 ```
-#### Comparisons
+#### Logical Operations
+
+|Operator	| Importance	|
+| --- | --- |
+| -eq	| Equal to	|
+| -ne	| Not equal to|
+| -lt   |     Less Than|
+| -gt   |     Greater then|
+| -le   |     Less than or equal to|
+| -ge   |     Greater then or equal to|
+|
+| -in   |     See if value in an array|
+| -Like |     Like wildcard pattern matching|
+| -NotLike |  Not Like |
+| -Match   |  Matches based on regular expressions|
+| -NotMatch | Non-Matches based on regular expressions|
 ```
 PS C:\> $var = 33
 
@@ -717,21 +726,6 @@ False
 
 PS C:\> $var -eq 33
 True
-
-PS C:\> # List is:
-#   -eq        Equals
-#   -ne        Not equal to
-#   -lt        Less Than
-#   -gt        Greater then
-#   -le        Less than or equal to
-#   -ge        Greater then or equal to
-
-#   -in        See if value in an array
-#   -notin     See if a value is missing from an array
-#   -Like      Like wildcard pattern matching
-#   -NotLike   Not Like 
-#   -Match     Matches based on regular expressions
-#   -NotMatch  Non-Matches based on regular expressions
 ```
 Calculations are like any other language.
 ```
@@ -800,17 +794,17 @@ PS C:\> $NULL # null type
 PS C:\> Write-Host $NuLL
 ```
 Observe that nothing is display; even methods like GetType() doesn't work on this object.
-```
-PS C:\> # Current directory
 
+To get the current working directory, 
+```
 PS C:\> $pwd
 
 Path
 ----
 C:\ 
-
-PS C:\> # Users Home Directory
-
+```
+To get the Users Home Directory,
+```
 PS C:\> $Home  
 C:\Users\praud01
 ```
@@ -830,9 +824,9 @@ DebuggerEnabled  : True
 IsRunspacePushed : False
 Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 
-PS C:\> # Process ID
+PS C:\> 
 
-PS C:\> $PID
+PS C:\> $PID     # It results the process ID
 12844
 ```
 Info about the current version of Powershell
@@ -851,7 +845,7 @@ SerializationVersion           1.1.0.1
 
 
 
-PS C:\> $_   # Current Object
+PS C:\> $_   # Current Object; Used in loops to get the iterating object.
 
 PS C:\> # Useful, mainly, in loops and exceptions
 
@@ -1012,34 +1006,41 @@ VideoUrls                      {@{innerText=5:08; URL=http://www.youtube.com/wat
 WarningPreference              Continue                                                                                     
 WhatIfPreference               False                                                                                        
 XML_CONFIG_OBJECT              CONFIG_CLASS                                                                                 
+```
+Assigning a new value to an existing variable
 
-PS C:\> # Assign a new value to an existing variable
-# $var1 = "In The Morning"
-
+Method 1:
+```
+PS C:\> $var1 = "In The Morning"
+```
+Method 2:
+```
 PS C:\> Set-Variable -Name var1 -Value "In The Morning"
 
 PS C:\> $var1
 In The Morning
 
 PS C:\> Set-Variable -Name var99 -Value "In The Morning"
+```
+Observe that set-variable works on objects that aren't created yet.
 
-PS C:\> # Observe that set-variable works on objects that aren't created yet
-
-PS C:\> # Clear the contents of a variable
-
+To clear the contents of a variable,
+```
 PS C:\> Clear-Variable -Name var1  # Same as $var1 = $null
 
 PS C:\> $var1
 
 PS C:\> 
 
-PS C:\> # Variable is now set to null
-
+```
+To set the variable to null object,
+```
 PS C:\> $var1 -eq $null
 True
 
-PS C:\> # Even though null, it still exists
-
+```
+Even though the object contains null, it still exists.
+```
 PS C:\> Get-Variable var1
 
 Name                           Value                                                                                        
@@ -1048,46 +1049,55 @@ var1
 
 ```
 ## 4. Working with Strings
+String Quoting
 ```bash
-PS C:\> # String Quoting
 PS C:\> "This is a string"
 This is a string
 PS C:\> 'This is a string too!'
 This is a string too!
-PS C:\>
-PS C:\> # Mixed quoted
+```
+Mixed quoted
+```
 PS C:\> 'I just wanted to say "Hello World", OK?'
 I just wanted to say "Hello World", OK?
 PS C:\> "I can't believe how cool Powershell is!"
 I can't believe how cool Powershell is!
-PS C:\>
-PS C:\> # You can also double quote to get quotes in strings
+```
+You can also double quote to get quotes in strings
+```
 PS C:\> "I just wanted to say ""Hello World"", OK?"
 I just wanted to say "Hello World", OK?
 PS C:\> 'I can''t believe how cool Powershell is!'
 I can't believe how cool Powershell is!
-PS C:\>
-PS C:\>
-PS C:\> # Escape Sequences - use the backtick `
-PS C:\> #   backspace `b (does not work in ISE, only the regular script window)
+```
+Escape Sequences - use the backtick `
+
+backspace `b (does not work in ISE, only the regular script window)
+```
 PS C:\> "Power`bShell"
 PoweShell
-PS C:\>
-PS C:\> #   newline `n
+```
+newline `n
+```
 PS C:\> "Power`nShell"
 Power
 Shell
-PS C:\> # carriage return `r (doesn't really show anything)
+```
+carriage return `r (doesn't really show anything)
+```
 PS C:\> "Power`rShell"
 Shell
-PS C:\> # crlf `r`n
+```
+crlf `r`n
+```
 PS C:\> "Power`r`nShell"
 Power
 Shell
-PS C:\> # tabs
+```
+tabs
+```
 PS C:\> "Power`tShell"
 Power   Shell
-PS C:\>
 ```
 .Replace is case-sensitive
 ```
@@ -1128,9 +1138,9 @@ Some more here
      a bit more
 
 a blank line above
-PS C:\>
-PS C:\> # the @ and quote must be last on starting line then first on ending line
-PS C:\> # also works with single quotes
+```
+The @ and quote must be last on starting line then first on ending line, also works with single quotes.
+```
 PS C:\> $moreheretext = @'
 >> Here we go again
 >> another line here
@@ -1138,7 +1148,9 @@ PS C:\> $moreheretext = @'
 >>
 >> a blank line above
 >> '@
-PS C:\> # note how the nested ' is handled OK, no double quoting needed
+```
+Note how the nested ' is handled OK, no double quoting needed.
+```
 PS C:\> $moreheretext
 Here we go again
 another line here
@@ -1148,8 +1160,9 @@ a blank line above
 PS C:\>
 ```
 To understand the importance of here strings, lets work with a multiple line string.
+
+Without here strings
 ```
-PS C:\> # Without here strings
 PS C:\> $sql = 'SELECT col1' `
 >>      + '     , col2' `
 >>      + '     , col3' `
@@ -1158,8 +1171,9 @@ PS C:\> $sql = 'SELECT col1' `
 PS C:\>
 PS C:\> $sql
 SELECT col1     , col2     , col3  FROM someTable  WHERE col1 = 'a value'
-PS C:\>
-PS C:\> # With here strings
+```
+With here strings
+```
 PS C:\> $sql = @'
 >> SELECT col1
 >>      , col2
@@ -1177,11 +1191,15 @@ SELECT col1
 #### String Interpolation
 ```
 PS C:\> Set-Location C:\Python27\Scripts\
-PS C:\Python27\Scripts> # Take the output of Get-ChildItem, which is an object, and gets that objects count property
+```
+Take the output of Get-ChildItem, which is an object, and gets that objects count property.
+```
 PS C:\Python27\Scripts> $items = (Get-ChildItem).Count
 PS C:\Python27\Scripts> $items
 207
-PS C:\Python27\Scripts> # Take the output of Get-Location and store it in a variable
+```
+Take the output of Get-Location and store it in a variable.
+```
 PS C:\Python27\Scripts> $loc = Get-Location
 PS C:\Python27\Scripts> $loc
 
@@ -1189,19 +1207,24 @@ Path
 ----
 C:\Python27\Scripts
 
-
-PS C:\Python27\Scripts> # Use these variables in a string
+```
+Use these variables in a string
+```
 PS C:\Python27\Scripts> "There are $items items are in the folder $loc."
 There are 207 items are in the folder C:\Python27\Scripts.
-PS C:\Python27\Scripts> # To actually display the variable, escape it with a backtick
+```
+To actually display the variable, escape it with a backtick, 
+```
 PS C:\Python27\Scripts> "There are `$items items are in the folder `$loc."
 There are $items items are in the folder $loc.
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts> # String interpolation only works with double quotes
+```
+String interpolation only works with double quotes
+```
 PS C:\Python27\Scripts> 'There are $items items are in the folder $loc.'
 There are $items items are in the folder $loc.
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts> # String Interpolation works with here strings
+```
+String Interpolation works with here strings
+```
 PS C:\Python27\Scripts> $hereinterpolation = @"
 >> Items`tFolder
 >> -----`t----------------------
@@ -1213,7 +1236,6 @@ Items   Folder
 -----   ----------------------
 207             C:\Python27\Scripts
 
-PS C:\Python27\Scripts>
 PS C:\Python27\Scripts> $hereinterpolation = @'
 >> Items`tFolder
 >> -----`t----------------------
@@ -1226,35 +1248,36 @@ Items`tFolder
 -----`t----------------------
 $items`t`t$loc
 
-PS C:\Python27\Scripts> # Observe that it didn't work for here strings defined with single quotes
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts> # Can use expressions in strings, need to be wrapped in $()
+```
+Observe that it didn't work for here strings defined with single quotes.
+
+Expressions used within strings, need to be wrapped in $().
+```
 PS C:\Python27\Scripts> "There are $((Get-ChildItem).Count) items are in the folder $(Get-Location)."
 There are 207 items are in the folder C:\Python27\Scripts.
-PS C:\Python27\Scripts>
+
 PS C:\Python27\Scripts> "Today is $(Get-Date). Be well."
 Today is 05/03/2017 12:43:17. Be well.
-PS C:\Python27\Scripts>
+
 PS C:\Python27\Scripts> "The 15% tip of a 33.33 dollar bill is $(33.33 * 0.15) dollars"
 The 15% tip of a 33.33 dollar bill is 4.9995 dollars
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts> # String Formatting - C# like syntax is supported
-PS C:\Python27\Scripts> #   In C# you'd use:
+```
+String Formatting - C# like syntax is supported. In C# you'd use:
+```
 PS C:\Python27\Scripts> [string]::Format("There are {0} items.", $items)
 There are 207 items.
-PS C:\Python27\Scripts>
-PS C:\Python27\Scripts> # Powershell shortcut
+```
+Powershell shortcut
+```
 PS C:\Python27\Scripts> "There are {0} items." -f $items
 There are 207 items.
-PS C:\Python27\Scripts>
+
 PS C:\Python27\Scripts> "There are {0} items in the location {1}." -f $items, $loc
 There are 207 items in the location C:\Python27\Scripts.
-PS C:\Python27\Scripts>
+
 PS C:\Python27\Scripts> "There are {0} items in the location {1}. Wow, {0} is a lot of items!" -f $items, $loc
 There are 207 items in the location C:\Python27\Scripts. Wow, 207 is a lot of items!
-PS C:\Python27\Scripts>
+
 ```
 #### Pre-defined formats
 >- N - Numbers
@@ -1311,8 +1334,9 @@ PS C:\> "D0 {0:D0} formatted"   -f 123
 D0 123 formatted
 PS C:\> "D0 {0,8:D0} formatted" -f 123
 D0      123 formatted
-PS C:\>
-PS C:\> # Note, decimal only supports ints. This causes an error:
+```
+Note, decimal only supports ints. This causes an error:
+```
 PS C:\> "D0 {0:D0} formatted"   -f 123.1
 Error formatting a string: Format specifier was invalid..
 At line:1 char:1
@@ -1332,8 +1356,7 @@ PS C:\> "Custom 0, 25 $#,##0.0000  = {0,25:$ #,##0.00} "   -f 123456789.01200000
 Custom 0, 25 $#,##0.0000  =          $ 123,456,789.01
 PS C:\> "Custom 0, 25 $#,##0.0000  = {0,25:$ #,##0.00} "   -f 123456789.012000005
 Custom 0, 25 $#,##0.0000  =          $ 123,456,789.01
-PS C:\>
-PS C:\>
+
 PS C:\> "Custom 0, 10 #,##0%    = {0,10:#,##0%} "    -f 0.125
 Custom 0, 10 #,##0%    =        13%
 PS C:\> "Custom 0, 10 #,##0.00% = {0,10:#,##0.00%} " -f 0.125
@@ -1343,9 +1366,9 @@ PS C:\>
 #### Date String Formatting
 * MM - Month
 * mm - minute 
-```bash
-PS C:\> # Custom date formatting. Note MM is Month, mm is minute                              
 
+Custom date formatting. Note MM is Month, mm is minute
+```bash
 PS C:\> "Today is {0:M/d/yyyy}. Be well."               -f $(Get-Date)              # Today is 3/13/2014. Be well.
 Today is 5-3-2017. Be well.
 
@@ -1360,9 +1383,9 @@ Today is 05-03-2017 03:51:54. Be well.
 
 ```
 #### Other formatting
-```bash
-PS C:\> # Calculations can be passed in as the item to be formatted                 
 
+Calculations can be passed in as the item to be formatted 
+```bash              
 PS C:\> "The 20% tip of a 33.33 dollar bill is {0} dollars" -f (33.33 * 0.20)       # The 20% tip of a 33.33 dollar bill is 6.666 dollars
 The 20% tip of a 33.33 dollar bill is 6.666 dollars
 
@@ -1403,6 +1426,7 @@ False
 ```
 ## 5. Working with Arrays
 #### 5.1 Simple Arrays
+Creating Array(s)
 ```bash
 PS C:\> $array = "Narendra", "Bhahubali"
 
@@ -1421,8 +1445,9 @@ PS C:\> $array.GetType()
 IsPublic IsSerial Name                                     BaseType                                                         
 -------- -------- ----                                     --------                                                         
 True     True     Object[]                                 System.Array  
-
-PS C:\> # Updating arrays
+```
+Updating Array(s)
+```
 PS C:\> $array = "Barack", "Obama"
 
 PS C:\> $array
@@ -1436,21 +1461,22 @@ PS C:\> $array[1] = "Shell"
 PS C:\> $array
 Power
 Shell
-
-PS C:\> # Formal Array Creation Syntax
-
+```
+Formal Array Creation Syntax
+```
 PS C:\> $array = @("Power", "Shell")
 
 PS C:\> $array
 Power
 Shell
-
-PS C:\> $array = @()   # Only way to create an empty array
+```
+Only way to create an empty array
+```
+PS C:\> $array = @()   
 
 PS C:\> $array.Count
 0
 
-PS C:\> 
 PS C:\> $array += "jeffrey"
 
 PS C:\> $array += "snover"
@@ -1462,7 +1488,6 @@ PS C:\> $array
 jeffrey
 snover
 
-PS C:\> 
 PS C:\> $array = 1..5  # Can load arrays using numeric range notation
 
 PS C:\> $array
@@ -1487,9 +1512,8 @@ PS C:\> $numbers -notcontains 42
 False
 ```
 #### 5.2 Array of Arrays
+Load four individual arrays
 ```bash
-PS C:\> # Load four individual arrays
-
 PS C:\> $a = 1..5
 
 PS C:\> $b = 6..10
@@ -1504,9 +1528,9 @@ $b = 6 7 8 9 10
 $c = 11 12 13 14 15 
 $d = 16 17 18 19 20
 
-PS C:\> 
-PS C:\> # Now create an array from the four individual ones
-
+``` 
+Now create an array from the four individual ones
+```
 PS C:\> $array = $a, $b, $c, $d
 
 PS C:\> $array
@@ -1530,21 +1554,22 @@ PS C:\> $array
 18
 19
 20
-
-PS C:\> # Array will now look like
-# Col      [0] [1] [2] [3] [4]
-# Row [0]   1   2   3   4   5
-# Row [1]   6   7   8   9  10
-# Row [2]  11  12  13  14  15
-# Row [3]  16  17  18  19  20
-
-PS C:\> # Reference the second item in the second array (remember arrays are 0 based)
-
+```
+Array will now look like
+```
+ Col      [0] [1] [2] [3] [4]
+ Row [0]   1   2   3   4   5
+ Row [1]   6   7   8   9  10
+ Row [2]  11  12  13  14  15
+ Row [3]  16  17  18  19  20
+```
+Reference the second item in the second array (remember arrays are 0 based)
+```
 PS C:\> $array[1][2] # Zero based array, go to 2nd row, 3rd item
 8
-
-PS C:\> # Take the contents of the array and join them into a single string. 
-
+```
+Take the contents of the array and join them into a single string. 
+```
 PS C:\> $array[0] -join " "
 1 2 3 4 5
 
@@ -1593,7 +1618,7 @@ jeffrey snover                 PowerShell Inventor
 ```
 Values from hash key can be retrieved in two ways:
 ```
-PS C:\> $hash["PowerShell"]    # Get a single value from the key
+PS C:\> $hash["PowerShell"]      # Get a single value from the key
 PowerShell.com
 
 PS C:\> $hash."jeffrey snover"    # Get single value using object syntax
