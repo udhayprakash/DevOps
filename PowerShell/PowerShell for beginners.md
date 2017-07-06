@@ -1,4 +1,4 @@
-PowerShell for Beginers
+PowerShell for beginners
 ===================
 ----------
 `This document is getting updated time-to-time. Become a watcher to get updates.`
@@ -1644,35 +1644,31 @@ Adding and removing values
 PS C:\> $hash               # Here's what's there to start
 
 Name                           Value                                                                                        
-----                           -----                                                                                        
-PowerShell                     PowerShell.com                                                                               
-Key                            Value                                                                                        
-jeffrey snover                 PowerShell Inventor                                                                          
-
-
+----                           -----                        
+PowerShell                     PowerShell.com               
+Key                            Value                        
+jeffrey snover                 PowerShell Inventor                                                                       
 
 PS C:\> $hash["aws"] = "Amazon Web Services"  # Add value using new key
 
 PS C:\> $hash                # Show the additional row
 
-Name                           Value                                                                                        
-----                           -----                                                                                        
-PowerShell                     PowerShell.com                                                                               
-aws                            Amazon Web Services                                                                          
-Key                            Value                                                                                        
-jeffrey snover                 PowerShell Inventor                                                                          
-
-
+Name                           Value                       
+----                           -----                       
+PowerShell                     PowerShell.com              
+aws                            Amazon Web Services         
+Key                            Value                       
+jeffrey snover                 PowerShell Inventor                                                                      
 
 PS C:\> $hash.Remove("jeffrey snover")        # Remove by passing in key
 
 PS C:\> $hash
 
-Name                           Value                                                                                        
-----                           -----                                                                                        
-PowerShell                     PowerShell.com                                                                               
-aws                            Amazon Web Services                                                                          
-Key                            Value                                                                                        
+Name                           Value                                                                                      
+----                           -----                                                                                      
+PowerShell                     PowerShell.com                                                                            
+aws                            Amazon Web Services                                                                        
+Key                            Value                                                                                      
 
 ```
 See if key exists
@@ -1867,7 +1863,7 @@ while ($i -le 5)
 ```
 #### 7.5 do-While
 ```
-
+PS C:\> # do-while
 $i = 1
 do
 {
@@ -1879,9 +1875,9 @@ $i = 2
 $i = 3
 $i = 4
 $i = 5
-
-PS C:\> # Do will always execute at least once
-
+```
+Do will always execute at least once
+```
 $i = 6
 do
 {
@@ -1889,9 +1885,9 @@ do
   $i++
 } while($i -le 5)
 $i = 6
-
-PS C:\> # Use until to make the check more positive
-
+```
+Use until to make the check more positive
+```
 $i = 1
 do
 {
@@ -1918,9 +1914,9 @@ $f = 2
 $f = 3
 $f = 4
 $f = 5
-
-PS C:\> # Note the initializer can be set seperately
-
+```
+Note the initializer can be set seperately
+```
 PS C:\> $f = 2
 for (; $f -le 5; $f++)
 {
@@ -1931,9 +1927,9 @@ $f = 2
 $f = 3
 $f = 4
 $f = 5
-
-PS C:\> # Iterating over a collection 1 by 1
-
+```
+Iterating over a collection 1 by 1
+```
 PS C:\> $array = 11,12,13,14,15   # Simple Array
 for ($i=0; $i -lt $array.Length; $i++)
 {
@@ -1945,6 +1941,7 @@ $array[2]=13
 $array[3]=14
 $array[4]=15
 ```
+
 #### 7.7 foreach
 foreach works on a collection
 ```
@@ -2156,24 +2153,27 @@ __NOTE:__ To put multiple commands on a single line use the ;
 ```bash
 PS C:\> {Clear-Host; "Powershell is cool."}
 Clear-Host; "Powershell is cool."
+```
+Executing only shows the contents of the block, doesn't execute it. 
 
-PS C:\> # Executing only shows the contents of the block, doesn't execute it 
-
-PS C:\> # To actually run it, use an ampersand & in front
-
+To actually run it, use an ampersand & in front.
+```
 PS C:\> &{Clear-Host; "Powershell is cool."}
 Powershell is cool.
-PS C:\> # You can store script blocks inside a variable
-
+```
+You can store script blocks inside a variable
+```
 PS C:\> $cool = {Clear-Host; "Powershell is cool."}
-
-PS C:\> $cool   # Just entering the variable though only shows the contents, doesn't run it
-Clear-Host; "Powershell is cool."
+```
+Just entering the variable though only shows the contents, doesn't run it.
+```
+PS C:\>Clear-Host; "Powershell is cool."
 
 PS C:\> & $cool # To actually run it, use the & character
 Powershell is cool.
-PS C:\> # Since scripts can be put in a variable, you can do interesting things
-
+```
+Since scripts can be put in a variable, you can do interesting things.
+```
 PS C:\> $cool = {"Powershell is cool."; " So is jeffrey snover"}
 for ($i=0;$i -lt 3; $i++)
 { 
@@ -3562,7 +3562,7 @@ Public
 ## 14. Other Modules
 #### 14.1 ShowUI
 ```
-PS C:\Users\PRAUD01> $User = [ordered]@{
+PS C:\> $User = [ordered]@{
    FirstName = "John"
    LastName = "Doe"
    BirthDate = [DateTime]
@@ -3571,18 +3571,14 @@ PS C:\Users\PRAUD01> $User = [ordered]@{
 
 $data = Get-Input $User -Show
 Write-Host $data
-System.Collections.Hashtable
+#System.Collections.Hashtable
 
-PS C:\Users\PRAUD01> $data
+PS C:\> $data
 
-Name                           Value                                                                                                 
-----                           -----                                                                                                 
-UserName                       udayPrakash                                                                                           
-FirstName                      uday                                                                                                  
-LastName                       prakash                                                                                               
-BirthDate                      6/16/2017 2:52:11 PM                                                                                  
-
-
-
-PS C:\Users\PRAUD01> 
+Name                           Value                                                                                      
+----                           -----                                                                                      
+UserName                       udayPrakash                                                                                
+FirstName                      uday                                                                                       
+LastName                       prakash                                                                                    
+BirthDate                      6/16/2017 2:52:11 PM                                                                       
 ```
